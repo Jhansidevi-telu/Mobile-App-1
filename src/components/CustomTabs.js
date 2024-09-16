@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import COLORS from "../constants/colors"; // Import COLORS
+import COLORS from "../constants/colors"; 
 
 function CustomTabs({ state, descriptors, navigation }) {
   return (
@@ -34,7 +34,7 @@ function CustomTabs({ state, descriptors, navigation }) {
           >
             <MaterialCommunityIcons
               name={options.tabBarIcon({ focused: isFocused }).props.name}
-              color={isFocused ? COLORS.primary : COLORS.black} // Use primary and black from COLORS
+              color={isFocused ? COLORS.primary : COLORS.black}
               size={24}
             />
             <Text style={{ color: isFocused ? COLORS.primary : COLORS.black }}>{label}</Text>
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     top: 0,
     height: 4,
     width: "100%",
-    backgroundColor: COLORS.primary, // Use primary from COLORS
+    backgroundColor: COLORS.primary,
   },
 });
 

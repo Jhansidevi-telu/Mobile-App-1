@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"; // Make sure this is correct
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"; 
 import HomeScreen from "../../screens/HomeScreen";
 import CustomTabs from "../../components/CustomTabs";
 import Header from "../../components/Header";
@@ -10,18 +10,18 @@ function Tabs() {
     <>
       <Header />
       <Tab.Navigator
-        initialRouteName="Feed"
-        tabBar={(props) => <CustomTabs {...props} />} // Custom Tab Bar
+        initialRouteName="Home"
+        tabBar={(props) => <CustomTabs {...props} />} 
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 
-            if (route.name === "Feed") {
+            if (route.name === "Home") {
               iconName = focused ? "home" : "home-outline";
-            } else if (route.name === "Notifications") {
+            } else if (route.name === "Categories") {
               iconName = focused ? "bell" : "bell-outline";
-            } else if (route.name === "Profile") {
-              iconName = focused ? "account" : "account-outline";
+            } else if (route.name === "My Orders") {
+              iconName = focused ? "gift-open" : "gift-open-outline";
             }
 
             return (
@@ -35,7 +35,7 @@ function Tabs() {
         })}
       >
         <Tab.Screen
-          name="Feed"
+          name="Home"
           component={HomeScreen}
           options={{
             headerShown: false,
@@ -43,19 +43,19 @@ function Tabs() {
           }}
         />
         <Tab.Screen
-          name="Notifications"
+          name="Categories"
           component={HomeScreen}
           options={{
-            tabBarLabel: "Updates",
+            tabBarLabel: "Categories",
             tabBarBadge: 3,
             headerShown: false,
           }}
         />
         <Tab.Screen
-          name="Profile"
+          name="My Orders"
           component={HomeScreen}
           options={{
-            tabBarLabel: "Profile",
+            tabBarLabel: "My Orders",
             headerShown: false,
           }}
         />
